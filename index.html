@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="BOX NINE LIMITED — UK-based company operating in e-commerce, logistics, and information technology services." />
+  <title>BOX NINE LIMITED</title>
+
+  <!-- Simple favicon (inline SVG via data URI) -->
+  <link rel="icon" type="image/svg+xml"
+    href='data:image/svg+xml;utf8,
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+      <defs>
+        <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+          <stop stop-color="%237c3aed"/>
+          <stop offset="1" stop-color="%232563eb"/>
+        </linearGradient>
+      </defs>
+      <rect x="6" y="6" width="52" height="52" rx="14" fill="%230b1020"/>
+      <path d="M18 26c0-4.4 3.6-8 8-8h12c4.4 0 8 3.6 8 8v12c0 4.4-3.6 8-8 8H26c-4.4 0-8-3.6-8-8V26z" fill="url(%23g)" opacity="0.9"/>
+      <path d="M26 26h12v12H26z" fill="%230b1020" opacity="0.35"/>
+      <text x="32" y="40" text-anchor="middle" font-family="Arial" font-size="16" font-weight="700" fill="white">B9</text>
+    </svg>' />
+
+  <style>
+    :root{
+      --bg: #070a12;
+      --card: rgba(255,255,255,0.06);
+      --card2: rgba(255,255,255,0.08);
+      --border: rgba(255,255,255,0.14);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.70);
+      --muted2: rgba(255,255,255,0.55);
+      --accent1: #7c3aed; /* purple */
+      --accent2: #2563eb; /* blue */
+      --shadow: 0 18px 60px rgba(0,0,0,0.55);
+      --radius: 20px;
+    }
+
+    *{ box-sizing: border-box; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1200px 600px at 20% 10%, rgba(124,58,237,0.35), transparent 55%),
+                  radial-gradient(900px 500px at 80% 20%, rgba(37,99,235,0.25), transparent 60%),
+                  radial-gradient(900px 500px at 50% 90%, rgba(124,58,237,0.18), transparent 55%),
+                  var(--bg);
+      min-height: 100vh;
+    }
+
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 44px 18px 56px;
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 16px;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .logo{
+      width: 44px;
+      height: 44px;
+      flex: 0 0 auto;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+      overflow:hidden;
+    }
+
+    .brandtext{
+      display:flex;
+      flex-direction:column;
+      line-height: 1.1;
+      min-width: 0;
+    }
+
+    .brandtext strong{
+      font-size: 14px;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .brandtext span{
+      font-size: 12px;
+      color: var(--muted2);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .dot{
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+      box-shadow: 0 0 0 4px rgba(124,58,237,0.15);
+    }
+
+    .hero{
+      margin-top: 26px;
+      padding: 34px 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    h1{
+      margin: 0 0 10px;
+      font-size: clamp(26px, 4vw, 40px);
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle{
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 70ch;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .card{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      border-radius: 18px;
+      padding: 18px;
+      min-height: 120px;
+    }
+
+    .card h2{
+      margin:0 0 8px;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .card p, .card li{
+      margin:0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .card ul{
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .span-7{ grid-column: span 7; }
+    .span-5{ grid-column: span 5; }
+    .span-12{ grid-column: span 12; }
+
+    .divider{
+      height: 1px;
+      background: rgba(255,255,255,0.12);
+      margin: 16px 0 0;
+    }
+
+    .footer{
+      margin-top: 18px;
+      color: var(--muted2);
+      font-size: 12px;
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    a{
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(255,255,255,0.25);
+    }
+    a:hover{ border-bottom-color: rgba(255,255,255,0.65); }
+
+    .tagrow{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .tag{
+      padding: 8px 10px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.78);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 999px;
+    }
+
+    @media (max-width: 860px){
+      .span-7, .span-5{ grid-column: span 12; }
+      .topbar{ padding: 12px 12px; }
+      .pill{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header class="topbar">
+      <div class="brand">
+        <!-- Inline SVG Logo -->
+        <div class="logo" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="44" height="44">
+            <defs>
+              <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+                <stop stop-color="#7c3aed"/>
+                <stop offset="1" stop-color="#2563eb"/>
+              </linearGradient>
+            </defs>
+            <rect x="6" y="6" width="68" height="68" rx="20" fill="#0b1020"/>
+            <path d="M22 30c0-5 4-9 9-9h18c5 0 9 4 9 9v20c0 5-4 9-9 9H31c-5 0-9-4-9-9V30z" fill="url(#grad)" opacity="0.95"/>
+            <path d="M31 31h18v18H31z" fill="#0b1020" opacity="0.35"/>
+            <text x="40" y="52" text-anchor="middle" font-family="Arial" font-size="18" font-weight="800" fill="white">B9</text>
+          </svg>
+        </div>
+
+        <div class="brandtext">
+          <strong>BOX NINE LIMITED</strong>
+          <span>UK Company • Software • E-commerce • Logistics</span>
+        </div>
+      </div>
+
+      <div class="pill" title="Company status / key info">
+        <span class="dot"></span>
+        Company No. 12606429 • London, UK
+      </div>
+    </header>
+
+    <main class="hero">
+      <h1>BOX NINE LIMITED</h1>
+      <p class="subtitle">
+        BOX NINE LIMITED is a UK-registered company operating across online retail, logistics services, and information technology activities.
+        This website provides corporate information and contact details.
+      </p>
+
+      <div class="tagrow" aria-label="Business areas">
+        <span class="tag">Retail (Mail Order / Internet)</span>
+        <span class="tag">Unlicensed Carrier (Last-mile deliveries)</span>
+        <span class="tag">IT Services (Software Platforms)</span>
+      </div>
+
+      <div class="grid">
+        <section class="card span-7">
+          <h2>Company details</h2>
+          <p><strong>Legal name:</strong> BOX NINE LIMITED</p>
+          <p><strong>Company number:</strong> 12606429</p>
+          <p><strong>Registered office:</strong> 128 City Road, London, United Kingdom, EC1V 2NX</p>
+          <div class="divider"></div>
+          <p style="margin-top:12px">
+            <strong>Contact:</strong>
+            <!-- Replace with your real email -->
+            <a href="mailto:hell@boxnine.co.uk">hello@boxnine.co.uk</a>
+          </p>
+        </section>
+
+        <section class="card span-5">
+          <h2>Nature of business (SIC)</h2>
+          <ul>
+            <li>47910 — Retail sale via mail order houses or via Internet</li>
+            <li>53202 — Unlicensed carrier</li>
+            <li>62090 — Other information technology service activities</li>
+          </ul>
+        </section>
+
+        <section class="card span-12">
+          <h2>About</h2>
+          <p>
+            BOX NINE LIMITED supports and develops digital products and services, including upcoming software platforms.
+            Where we operate under distinct product or brand names, those brands are owned and operated by BOX NINE LIMITED.
+          </p>
+        </section>
+      </div>
+
+      <div class="footer">
+        <span>© <span id="year"></span> BOX NINE LIMITED. All rights reserved.</span>
+        <span>
+          <!-- Optional: link to Companies House page if you want -->
+          Registered in England & Wales • Company No. 12606429
+        </span>
+      </div>
+    </main>
+
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
